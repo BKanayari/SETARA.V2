@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    
     @State private var checkState: [Bool] = [false, false]
     @State private var showingAlert: Bool = false
     @State private var btnActive: Bool = true
