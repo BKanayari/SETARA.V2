@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TreatView: View {
-    @State var listNameTable: [ListName]
+    @State var listNameTable: [Participant]
     @State private var treatNumber: String = ""
     @State private var selectedPerson = 0
     @Binding var isPresented: Bool
@@ -27,7 +27,7 @@ struct TreatView: View {
 
             Picker("Choose the person", selection: $selectedPerson, content: {
                 ForEach(0..<listNameTable.count, id: \.self) { index in
-                    if listNameTable[index].isChecked {
+                    if listNameTable[index].isParticipated {
                         Text("\(listNameTable[index].name)")
                     }
                 }
@@ -36,8 +36,7 @@ struct TreatView: View {
 
             // logic calculate treat
 
-            var tmpTotal = 0
-            var treatPerson = ParticipantData.shared.getParticipant(name: listNameTable[selectedPerson].name) ?? ListName(name: "", isChecked: false, food: [FoodList(itemName: "", itemPrice: 0)], total: 0)
+            var treatPerson = ParticipantData.shared.getParticipant(name: listNameTable[selectedPerson].name) ?? Participant(name: "", isParticipated: false, food: [ParticipantItem(itemName: "", itemPrice: 0)], total: 0)
 
             let intTreatNumber = Int(treatNumber) ?? 0
 
@@ -47,7 +46,7 @@ struct TreatView: View {
 
                     print(treatPerson.total)
 
-                    var sumTmpTotal = 0
+                    var sumTmpTotal = 0 /// tmp = temporary
 
                     for i in 0..<listNameTable.count {
                         let participantss = ParticipantData.shared.getParticipant(name: listNameTable[i].name)
@@ -83,7 +82,7 @@ struct TreatView: View {
                     .fontWeight(.bold)
                     .font(.system(.title2, design: .rounded))
                     .frame(width: 150, height: 50, alignment: .center)
-                    .background(CustomColor.myColor)
+                    .background(Color("BasicYellow"))
                     .foregroundColor(.white)
                     .cornerRadius(20)
                     .shadow(radius: 5)
@@ -97,6 +96,6 @@ struct TreatView: View {
 
 struct TreatView_Previews: PreviewProvider {
     static var previews: some View {
-        TreatView(listNameTable: [ListName(name: "Me", isChecked: true, food: [], total: 100)], isPresented: .constant(true), index: 0)
+        TreatView(listNameTable: [Participant(name: "Me", isParticipated: true, food: [], total: 100)], isPresented: .constant(true), index: 0)
     }
 }

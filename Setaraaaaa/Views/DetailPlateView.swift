@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailPlateView: View {
     @State var checkState = false
-    @State var participant: ListName
+    @State var participant: Participant
     @State var nameItems: [String] = []
     @State var priceItems: [String] = []
     @State var counter: Int = 0
@@ -24,7 +24,7 @@ struct DetailPlateView: View {
     @State private var taxPercent: String = ""
     @State private var taxIDR: String = ""
     @FocusState var isFocused: Bool
-    @Binding var listNameTable: [ListName]
+    @Binding var listNameTable: [Participant]
     var index: Int
     
     var body: some View {
@@ -49,7 +49,7 @@ struct DetailPlateView: View {
                                         ParticipantData.shared.deleteFood(name: participantss.name, index: i)
                                         isToggle[0] = true
                                         isToggle[0] = false
-                                        listNameTable[index] = ListName(name: participant.name, isChecked: participant.isChecked, food: participant.food, total: participant.total)
+                                        listNameTable[index] = Participant(name: participant.name, isParticipated: participant.isParticipated, food: participant.food, total: participant.total)
                                     } label: {
                                         Image(systemName: "trash")
                                     } .tint(.red)
@@ -113,7 +113,7 @@ struct DetailPlateView: View {
                             .foregroundColor(.white)
                             .padding(.trailing, 10)
                             .frame(width: 70, height: 30, alignment: .center)
-                            .background(CustomColor.myColor)
+                            .background(Color("BasicYellow"))
                             .disabled(!isToggle[0])
                         }
                         .padding(.trailing, 10)
@@ -143,7 +143,7 @@ struct DetailPlateView: View {
                             }
                             .frame(width: 70, height: 30)
                             .foregroundColor(.white)
-                            .background(CustomColor.myColor)
+                            .background(Color("BasicYellow"))
                             .padding(.leading, 70)
                             .padding(.trailing, 10)
                             .disabled(!isToggle[1])
@@ -173,7 +173,7 @@ struct DetailPlateView: View {
                         }
                         .frame(width: 70, height: 30)
                         .foregroundColor(.white)
-                        .background(CustomColor.myColor)
+                        .background(Color("BasicYellow"))
                         .padding(.trailing, 10)
                         .disabled(!isToggle[2])
                     }
@@ -193,7 +193,7 @@ struct DetailPlateView: View {
                                     let basePriceInt = Int(basePrice) ?? 0
                                     let totalDiscount = (basePriceInt * (100 - discountInt) ) / 100
                                     ParticipantData.shared.addFood(name: participant.name,
-                                                                   food: FoodList(itemName: nameItem,
+                                                                   food: ParticipantItem(itemName: nameItem,
                                                                                   itemPrice: totalDiscount))
                                 } else if isToggle[1] {
                                     let taxInt = Int(taxPercent) ?? 0
@@ -201,18 +201,18 @@ struct DetailPlateView: View {
                                     let totalDiscount = (basePriceInt * (100 + taxInt)) / 100
                                     ParticipantData.shared.addFood(
                                         name: participant.name,
-                                        food: FoodList(itemName: nameItem,
+                                        food: ParticipantItem(itemName: nameItem,
                                                        itemPrice: totalDiscount))
                                 } else if isToggle[2] {
                                     let taxInt = Int(feeIDR) ?? 0
                                     let basePriceInt = Int(basePrice) ?? 0
                                     let totalDiscount = basePriceInt + taxInt
-                                    ParticipantData.shared.addFood(name: participant.name, food: FoodList(itemName: nameItem, itemPrice: totalDiscount))
+                                    ParticipantData.shared.addFood(name: participant.name, food: ParticipantItem(itemName: nameItem, itemPrice: totalDiscount))
                                 } else {
-                                    ParticipantData.shared.addFood(name: participant.name, food: FoodList(itemName: nameItem, itemPrice: Int(basePrice) ?? 0))
+                                    ParticipantData.shared.addFood(name: participant.name, food: ParticipantItem(itemName: nameItem, itemPrice: Int(basePrice) ?? 0))
                                 }
                                 var tmpTotal = 0
-                                var tmpParticipant = ParticipantData.shared.getParticipant(name: participant.name) ?? ListName(name: "", isChecked: false, food: [FoodList(itemName: "", itemPrice: 0)], total: 0)
+                                var tmpParticipant = ParticipantData.shared.getParticipant(name: participant.name) ?? Participant(name: "", isParticipated: false, food: [ParticipantItem(itemName: "", itemPrice: 0)], total: 0)
                                 for i in 0..<(tmpParticipant.food.count ) {
                                     print("i: ", i)
                                     tmpTotal += tmpParticipant.food[i].itemPrice
@@ -229,8 +229,8 @@ struct DetailPlateView: View {
                                 nameItem = ""
                                 print("total: ", tmpParticipant.total)
                                 isFocused = false
-                                listNameTable[index] = ListName(name: participant.name,
-                                                                isChecked: participant.isChecked,
+                                listNameTable[index] = Participant(name: participant.name,
+                                                                isParticipated: participant.isParticipated,
                                                                 food: participant.food,
                                                                 total: participant.total)
                             }
@@ -239,7 +239,7 @@ struct DetailPlateView: View {
                                 RoundedRectangle(cornerRadius: 15)
                                     .frame(width: 200, height: 60, alignment: .center)
                                     .shadow(radius: 5)
-                                    .foregroundColor(CustomColor.myColor)
+                                    .foregroundColor(Color("BasicYellow"))
                                 Text("Add")
                                     .font(.system(.title2, design: .rounded))
                                     .fontWeight(.bold)
@@ -262,6 +262,6 @@ struct DetailPlateView: View {
 
 struct DetailPlateView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPlateView( participant: ListName(name: "Hengky", isChecked: false, food: [FoodList(itemName: "", itemPrice: 0)], total: 0), listNameTable: .constant([]), index: 0 )
+        DetailPlateView( participant: Participant(name: "Hengky", isParticipated: false, food: [ParticipantItem(itemName: "", itemPrice: 0)], total: 0), listNameTable: .constant([]), index: 0 )
     }
 }

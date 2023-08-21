@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SplitBillResultView: View {
-    @State var listNameTable: [ListName]
+    @State var listNameTable: [Participant]
     @State var returnHome = false
     @State private var showingAlert = false
 
@@ -24,8 +24,8 @@ struct SplitBillResultView: View {
                         .fontWeight(.bold)
                         .font(.system(size: 25))
                     List {
-                        ForEach(0..<listNameTable.count) { i in
-                            if listNameTable[i].isChecked {
+                        ForEach(0..<listNameTable.count, id: \.self) { i in
+                            if listNameTable[i].isParticipated {
                                 let participantss = ParticipantData.shared.getParticipant(name: listNameTable[i].name)
                                 HStack {
                                     Image(systemName: "person.circle.fill")
@@ -60,7 +60,7 @@ struct SplitBillResultView: View {
                             .frame(width: 200)
                             .padding()
                             .foregroundColor(.white)
-                            .background(CustomColor.myColor)
+                            .background(Color("BasicYellow"))
                             .cornerRadius(20)
                             .shadow(radius: 5)
                     }

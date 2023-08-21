@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ParticipantPlateView: View {
-    @State var listNameTable: [ListName]
-
+    @State var listNameTable: [Participant]
     @State private var navigated = false
     @State private var showingSheet = false
     @State private var showingSheetDeposit = false
@@ -26,7 +25,6 @@ struct ParticipantPlateView: View {
                     Button(
                         action: {
                             showingSheet.toggle()
-
                             isPresented = true
                         }, label: {
                             Image("Cake")
@@ -62,8 +60,8 @@ struct ParticipantPlateView: View {
             Spacer()
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 25) {
-                    ForEach(0..<listNameTable.count) { i in
-                        if listNameTable[i].isChecked {
+                    ForEach(0..<listNameTable.count, id: \.self) { i in
+                        if listNameTable[i].isParticipated {
                             let totalSum = ParticipantData.shared.getParticipant(name: listNameTable[i].name)
 
                             ZStack(alignment: .bottom) {
@@ -103,7 +101,7 @@ struct ParticipantPlateView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .frame(width: 230, height: 60)
                                 .shadow(radius: 5)
-                                .foregroundColor(CustomColor.myColor)
+                                .foregroundColor(Color("BasicYellow"))
                             Text("Result")
                                 .font(.system(.title2, design: .rounded))
                                 .fontWeight(.bold)
@@ -130,6 +128,6 @@ struct ParticipantPlateView: View {
 
 struct ParticipantPlateView_Previews: PreviewProvider {
     static var previews: some View {
-        ParticipantPlateView(listNameTable: [ListName(name: "Me", isChecked: false, food: [FoodList(itemName: "Tarempa", itemPrice: 10_000)], total: 0)])
+        ParticipantPlateView(listNameTable: [Participant(name: "Me", isParticipated: false, food: [ParticipantItem(itemName: "Tarempa", itemPrice: 10_000)], total: 0)])
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FoodList: Codable {
+struct ParticipantItem: Codable {
     let itemName: String
     let itemPrice: Int
 }

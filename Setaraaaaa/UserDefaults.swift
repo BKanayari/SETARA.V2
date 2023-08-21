@@ -10,7 +10,7 @@ import Foundation
 struct ParticipantData: Codable {
     static let shared = Self()
 
-    func addParcticipant(participantName: ListName) {
+    func addParcticipant(participantName: Participant) {
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(participantName)
@@ -21,14 +21,14 @@ struct ParticipantData: Codable {
         }
     }
 
-    func getParticipant(name: String) -> ListName? {
+    func getParticipant(name: String) -> Participant? {
         if let data = UserDefaults.standard.data(forKey: name) {
             do {
                 // Create JSON Decoder
                 let decoder = JSONDecoder()
 
                 // Decode Note
-                return try decoder.decode(ListName.self, from: data)
+                return try decoder.decode(Participant.self, from: data)
             } catch {
                 print("Unable to Decode Note (\(error))")
             }
@@ -36,7 +36,7 @@ struct ParticipantData: Codable {
         return nil
     }
 
-    func addFood(name: String, food: FoodList) {
+    func addFood(name: String, food: ParticipantItem) {
         if let participant = getParticipant(name: name) {
             var newParticipant = participant
             newParticipant.food.append(food)

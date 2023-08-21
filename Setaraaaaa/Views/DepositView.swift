@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DepositView: View {
-    @State var listNameTable: [ListName]
+    @State var listNameTable: [Participant]
     @State private var depositNumber: String = ""
     @State private var selectedPerson = 0
     @Binding var isPresented: Bool
@@ -24,10 +24,9 @@ struct DepositView: View {
                 .lineLimit(2)
                 .padding(.leading, 10)
                 .keyboardType(.numberPad)
-
             Picker("Choose the person", selection: $selectedPerson, content: {
                 ForEach(0..<listNameTable.count, id: \.self) { index in
-                    if listNameTable[index].isChecked {
+                    if listNameTable[index].isParticipated {
                         Text("\(listNameTable[index].name)")
                     }
                 }
@@ -38,8 +37,8 @@ struct DepositView: View {
             
             var depositPerson = ParticipantData.shared.getParticipant(
                 name: listNameTable[selectedPerson].name) ??
-            ListName(name: "", isChecked: false,
-                     food: [FoodList(itemName: "", itemPrice: 0)], total: 0)
+            Participant(name: "", isParticipated: false,
+                     food: [ParticipantItem(itemName: "", itemPrice: 0)], total: 0)
             var tmpTotal = 0
             var calculateDepositWithTotal = 0
             Button(action: {
@@ -54,7 +53,7 @@ struct DepositView: View {
                     .fontWeight(.bold)
                     .font(.system(.title2, design: .rounded))
                     .frame(width: 150, height: 50, alignment: .center)
-                    .background(CustomColor.myColor)
+                    .background(Color("BasicYellow"))
                     .foregroundColor(.white)
                     .cornerRadius(20)
                     .shadow(radius: 5)
@@ -65,6 +64,6 @@ struct DepositView: View {
 
 struct DepositView_Previews: PreviewProvider {
     static var previews: some View {
-        DepositView(listNameTable: [ListName(name: "Me", isChecked: true, food: [], total: 100)], isPresented: .constant(true), index: 0)
+        DepositView(listNameTable: [Participant(name: "Me", isParticipated: true, food: [], total: 100)], isPresented: .constant(true), index: 0)
     }
 }

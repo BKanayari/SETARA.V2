@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		646519022A8F5B7C0074BF1F /* ListName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646519012A8F5B7C0074BF1F /* ListName.swift */; };
-		646519042A8F5B8A0074BF1F /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646519032A8F5B8A0074BF1F /* FoodList.swift */; };
-		6486A6812A93601500F5A4E4 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486A6802A93601500F5A4E4 /* CustomColor.swift */; };
+		646519022A8F5B7C0074BF1F /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646519012A8F5B7C0074BF1F /* Participant.swift */; };
+		646519042A8F5B8A0074BF1F /* ParticipantItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646519032A8F5B8A0074BF1F /* ParticipantItem.swift */; };
 		F740A6FD29E7327500265AAC /* TreatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F740A6FC29E7327500265AAC /* TreatView.swift */; };
 		F75B50D929D6CB20007D2998 /* SetaraaaaaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */; };
 		F75B50DD29D6CB21007D2998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75B50DC29D6CB21007D2998 /* Assets.xcassets */; };
@@ -25,9 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		646519012A8F5B7C0074BF1F /* ListName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListName.swift; sourceTree = "<group>"; };
-		646519032A8F5B8A0074BF1F /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
-		6486A6802A93601500F5A4E4 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		646519012A8F5B7C0074BF1F /* Participant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
+		646519032A8F5B8A0074BF1F /* ParticipantItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantItem.swift; sourceTree = "<group>"; };
 		F740A6FC29E7327500265AAC /* TreatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatView.swift; sourceTree = "<group>"; };
 		F75B50D529D6CB20007D2998 /* Setaraaaaa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setaraaaaa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetaraaaaaApp.swift; sourceTree = "<group>"; };
@@ -65,6 +63,14 @@
 		64296C8B2A861ED0004CCFEE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F790036C29E5184100CA6C83 /* SplashScreenView.swift */,
+				F75B50E629D6CEA2007D2998 /* OnBoardingView.swift */,
+				F7F1355D29DBBD8E0074F8F3 /* ParticipantListView.swift */,
+				F75B50F029DB4583007D2998 /* ParticipantPlateView.swift */,
+				F7F1355F29DC2BB30074F8F3 /* DetailPlateView.swift */,
+				F787F17C29EE8C080076959F /* DepositView.swift */,
+				F740A6FC29E7327500265AAC /* TreatView.swift */,
+				F75B50EC29DAB3D5007D2998 /* SplitBillResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -72,8 +78,8 @@
 		64296C8C2A861ED1004CCFEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				646519012A8F5B7C0074BF1F /* ListName.swift */,
-				646519032A8F5B8A0074BF1F /* FoodList.swift */,
+				646519012A8F5B7C0074BF1F /* Participant.swift */,
+				646519032A8F5B8A0074BF1F /* ParticipantItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,20 +103,11 @@
 		F75B50D729D6CB20007D2998 /* Setaraaaaa */ = {
 			isa = PBXGroup;
 			children = (
-				6486A6802A93601500F5A4E4 /* CustomColor.swift */,
 				64296C8C2A861ED1004CCFEE /* Models */,
 				64296C8B2A861ED0004CCFEE /* Views */,
 				64296C8A2A861ECD004CCFEE /* ViewModels */,
 				F7A3EC3D29F0FB4D00ED36C7 /* Info.plist */,
 				F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */,
-				F790036C29E5184100CA6C83 /* SplashScreenView.swift */,
-				F75B50E629D6CEA2007D2998 /* OnBoardingView.swift */,
-				F7F1355D29DBBD8E0074F8F3 /* ParticipantListView.swift */,
-				F75B50F029DB4583007D2998 /* ParticipantPlateView.swift */,
-				F7F1355F29DC2BB30074F8F3 /* DetailPlateView.swift */,
-				F787F17C29EE8C080076959F /* DepositView.swift */,
-				F740A6FC29E7327500265AAC /* TreatView.swift */,
-				F75B50EC29DAB3D5007D2998 /* SplitBillResultView.swift */,
 				F790036E29E5236200CA6C83 /* UserDefaults.swift */,
 				F75B50DC29D6CB21007D2998 /* Assets.xcassets */,
 				F75B50DE29D6CB21007D2998 /* Preview Content */,
@@ -199,13 +196,12 @@
 				F75B50F129DB4583007D2998 /* ParticipantPlateView.swift in Sources */,
 				F75B50E729D6CEA2007D2998 /* OnBoardingView.swift in Sources */,
 				F740A6FD29E7327500265AAC /* TreatView.swift in Sources */,
-				6486A6812A93601500F5A4E4 /* CustomColor.swift in Sources */,
-				646519042A8F5B8A0074BF1F /* FoodList.swift in Sources */,
+				646519042A8F5B8A0074BF1F /* ParticipantItem.swift in Sources */,
 				F790036D29E5184100CA6C83 /* SplashScreenView.swift in Sources */,
 				F7F1356029DC2BB30074F8F3 /* DetailPlateView.swift in Sources */,
 				F787F17D29EE8C080076959F /* DepositView.swift in Sources */,
 				F7F1355E29DBBD8E0074F8F3 /* ParticipantListView.swift in Sources */,
-				646519022A8F5B7C0074BF1F /* ListName.swift in Sources */,
+				646519022A8F5B7C0074BF1F /* Participant.swift in Sources */,
 				F790036F29E5236200CA6C83 /* UserDefaults.swift in Sources */,
 				F75B50ED29DAB3D5007D2998 /* SplitBillResultView.swift in Sources */,
 				F75B50D929D6CB20007D2998 /* SetaraaaaaApp.swift in Sources */,

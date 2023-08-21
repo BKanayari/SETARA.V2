@@ -8,90 +8,105 @@
 import SwiftUI
 
 struct ParticipantListView: View {
-
-    /// participants who want to take part in the split bill
-    @State private var involvedParticipant: [Bool] = [false, false]
+    @State private var isInvolveParticipant: [Bool] = [false, false] /// participant that join the split bill
     @State private var showingAlert = false
-    @State private var btnActive = true
-    @State var checkCount: Int = 0
-    @State var nameParticipant: [String] = ["Me"]
-    @State private var navigated = false
-    @State var listName: [ListName] = [
-        ListName(name: "Me", isChecked: false, food: [], total: 0)
-    ]
+    @State private var showingAlertParticipant = false /// showing alert if participant less than 2 people
+    @State private var isNavigated = false
+    @State private var isNextButtonActive = true
+    @State var involvedParticipant: Int = 0 /// amout of participant that join the split bill
+    @State var participantName: [String] = ["Me"] /// set one default participant name to array
+    @State var participantList: [Participant] = [
+        Participant(name: "Me",
+                    isParticipated: false,
+                    food: [],
+                    total: 0),
+    ] /// set one default participant to Participant array
 
     var body: some View {
         VStack {
             NavigationStack {
                 VStack {
+                    /// list of participant name
                     List {
-                        ForEach(0..<nameParticipant.count, id: \.self) { index in
+                        ForEach(0..<participantName.count, id: \.self) { index in
                             HStack {
+                                /// button to change isInvolveParticipant value to true if the participant want to join the split bill
                                 Button(action: {
-                                    // 1. Save state
-                                    involvedParticipant[index].toggle()
+                                    /// changing isInvolveParticipant boolean value to true or false
+                                    isInvolveParticipant[index].toggle()
 
-                                    listName[index].isChecked.toggle()
+                                    /// change participantList.isParticipated to true or false
+                                    participantList[index].isParticipated.toggle()
 
-                                    print("State : \(involvedParticipant)")
+                                    /// checks whether the participant has entered the array or not
+                                    print("State : \(isInvolveParticipant)")
 
-                                    let checkNameDatabase = ParticipantData.shared.getParticipant(name: nameParticipant[index])
+                                    /// stored retrieve data from ParticipantData to let isNamePresent
+                                    let isNamePresent = ParticipantData.shared.getParticipant(name: participantName[index])
 
-                                    if checkNameDatabase == nil {
-                                        ParticipantData.shared.addParcticipant(participantName: ListName(name: "\(nameParticipant[index])", isChecked: false, food: [], total: 0))
-
-                                        print("Berhasil menambahkan \(nameParticipant[index])")
+                                    /// checks whether the participant name already exists in the array or not before
+                                    if isNamePresent == nil {
+                                        ParticipantData.shared.addParcticipant(participantName: Participant(name: "me", isParticipated: false, food: [], total: 0))
+                                        print("Successful add \(participantName[index])")
                                     } else {
-                                        print("nama ini udah ada")
+                                        print("name already exists")
                                     }
 
-                                    if involvedParticipant[index] == true {
-                                        checkCount += 1
+                                    /// checks if the value of isInvolveParticipant is true then it will add 1 value involvedParticipant
+                                    if isInvolveParticipant[index] == true {
+                                        involvedParticipant += 1
+                                        print("involvedParticipant+1")
                                     } else {
-                                        checkCount -= 1
+                                        /// will reduce 1 value if the value of isInvolveParticipant  is false
+                                        involvedParticipant -= 1
+                                        print("involvedParticipant-1")
                                     }
 
-                                    if checkCount < 2 {
-                                        btnActive = true
+                                    /// checking condition if participant less than 2 user can't move to next view
+                                    if involvedParticipant < 2 {
+                                        isNextButtonActive = true
                                     } else {
-                                        btnActive = false
+                                        isNextButtonActive = false
                                     }
                                 }) {
                                     HStack( spacing: 10) {
-                                        Text("\(nameParticipant[index])")
-
+                                        /// contents list
+                                        Text("\(participantName[index])")
                                             .lineLimit(1)
                                             .frame(width: 200, alignment: .leading)
-
                                         Rectangle()
-                                            .fill(involvedParticipant[index] ? CustomColor.myColor : Color.gray)
+                                            .fill(isInvolveParticipant[index] ? Color("BasicYellow") : Color.gray)
                                             .frame(width: 20, height: 20, alignment: .center)
                                             .cornerRadius(5)
                                             .padding(.leading, 120)
                                     }
                                     .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
                                         Button {
-                                            nameParticipant.remove(at: index)
+                                            participantName.remove(at: index)
                                         } label: {
                                             Image(systemName: "trash")
-                                        } .tint(.red)
+                                        }.tint(.red)
                                     })
                                 }
                                 .foregroundColor(Color.black)
                             }
                         }
                     }
-                    NavigationLink(destination: ParticipantPlateView(listNameTable: listName), isActive: $navigated) {
+                    NavigationLink(destination: ParticipantPlateView(listNameTable: participantList), isActive: $isNavigated) {
                         Button {
-                            navigated = true
+                            /// app will show alert if amount of involvedParticipant less than 2
+                            if involvedParticipant < 2 {
+                                showingAlertParticipant = true
+                            } else {
+                                isNavigated = true
+                            }
                         }
                     label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
                                 .frame(width: 230, height: 60)
                                 .shadow(radius: 5)
-
-                                .foregroundColor(CustomColor.myColor)
+                                .foregroundColor(Color("BasicYellow"))
                             Text("Next")
                                 .font(.system(.title2, design: .rounded))
                                 .fontWeight(.bold)
@@ -101,26 +116,28 @@ struct ParticipantListView: View {
                     .padding()
                     .padding(.bottom, 80)
                     }
-                    .disabled(btnActive)
                 }
+                .navigationTitle("Participants")
                 .background(Image("BackGround"))
                 .listStyle(.plain)
-                .navigationTitle("Participants")
+                .alert(isPresented: $showingAlertParticipant) {
+                    Alert(title: Text("Warning"), message: Text("Please add at least 2 participants."), dismissButton: .default(Text("OK")))
+                }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
+                        /// button to add participant
                         Button(
+                            /// trigger custom alert
                             action: {
                                 alertTF(title: "Add Participants Name", message: "Enter the names of the person in your group", hintText: "Name", primaryTitle: "Cancel", secondaryTitle: "Add") { text in
                                     if text.isEmpty {
                                         showingAlert.toggle()
                                     } else {
-                                        nameParticipant.append(text)
-                                        involvedParticipant.append(false)
-
-                                        listName.append(ListName(name: text, isChecked: false, food: [], total: 0))
+                                        participantName.append(text)
+                                        isInvolveParticipant.append(false)
+                                        participantList.append(Participant(name: text, isParticipated: false, food: [], total: 0))
                                     }
                                 }
-
                             secondaryAction: {
                                 print("Cancelled")
                             }
@@ -135,7 +152,7 @@ struct ParticipantListView: View {
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.large)
-            .accentColor(CustomColor.myColor)
+            .accentColor(Color("BasicYellow"))
         }
     }
 }
@@ -146,6 +163,7 @@ struct ParticipantListView_Previews: PreviewProvider {
     }
 }
 
+/// Custom Alert View
 extension View {
     func alertTF(title: String, message: String, hintText: String, primaryTitle: String, secondaryTitle: String, primaryAction: @escaping (String) -> Void, secondaryAction: @escaping () -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -178,3 +196,5 @@ extension View {
         return root
     }
 }
+
+

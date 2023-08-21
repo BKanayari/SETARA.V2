@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ListName: Codable {
+struct Participant: Codable {
     var name: String
-    var isChecked: Bool
-    var food: [FoodList]
+    var isParticipated: Bool
+    var food: [ParticipantItem]
     var total: Int
 }
