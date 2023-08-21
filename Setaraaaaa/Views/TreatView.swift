@@ -23,7 +23,7 @@ struct TreatView: View {
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
                 .padding(.leading, 10)
-                .keyboardType(.numberPad)
+                .keyboardType(.decimalPad)
 
             Picker("Choose the person", selection: $selectedPerson, content: {
                 ForEach(0..<listNameTable.count, id: \.self) { index in
@@ -56,7 +56,7 @@ struct TreatView: View {
 
                     let calculateTreatment = (sumTmpTotal - intTreatNumber) / (listNameTable.count - 1)
 
-//                    var tmpTotal = 0
+                    var tmpTotal = 0
 
                     for i in 0..<listNameTable.count {
                         if i != selectedPerson {

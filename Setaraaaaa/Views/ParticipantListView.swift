@@ -92,7 +92,7 @@ struct ParticipantListView: View {
                             }
                         }
                     }
-                    NavigationLink(destination: ParticipantPlateView(listNameTable: participantList), isActive: $isNavigated) {
+                    NavigationLink(destination: ParticipantPlateView(participantPlate: participantList), isActive: $isNavigated) {
                         Button {
                             /// app will show alert if amount of involvedParticipant less than 2
                             if involvedParticipant < 2 {

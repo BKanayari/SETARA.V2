@@ -20,7 +20,7 @@
 		F790036D29E5184100CA6C83 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790036C29E5184100CA6C83 /* SplashScreenView.swift */; };
 		F790036F29E5236200CA6C83 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790036E29E5236200CA6C83 /* UserDefaults.swift */; };
 		F7F1355E29DBBD8E0074F8F3 /* ParticipantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355D29DBBD8E0074F8F3 /* ParticipantListView.swift */; };
-		F7F1356029DC2BB30074F8F3 /* DetailPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355F29DC2BB30074F8F3 /* DetailPlateView.swift */; };
+		F7F1356029DC2BB30074F8F3 /* DetailParticipantPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355F29DC2BB30074F8F3 /* DetailParticipantPlateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		F790036E29E5236200CA6C83 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		F7A3EC3D29F0FB4D00ED36C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7F1355D29DBBD8E0074F8F3 /* ParticipantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantListView.swift; sourceTree = "<group>"; };
-		F7F1355F29DC2BB30074F8F3 /* DetailPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlateView.swift; sourceTree = "<group>"; };
+		F7F1355F29DC2BB30074F8F3 /* DetailParticipantPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailParticipantPlateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 				F75B50E629D6CEA2007D2998 /* OnBoardingView.swift */,
 				F7F1355D29DBBD8E0074F8F3 /* ParticipantListView.swift */,
 				F75B50F029DB4583007D2998 /* ParticipantPlateView.swift */,
-				F7F1355F29DC2BB30074F8F3 /* DetailPlateView.swift */,
+				F7F1355F29DC2BB30074F8F3 /* DetailParticipantPlateView.swift */,
 				F787F17C29EE8C080076959F /* DepositView.swift */,
 				F740A6FC29E7327500265AAC /* TreatView.swift */,
 				F75B50EC29DAB3D5007D2998 /* SplitBillResultView.swift */,
@@ -106,10 +106,10 @@
 				64296C8C2A861ED1004CCFEE /* Models */,
 				64296C8B2A861ED0004CCFEE /* Views */,
 				64296C8A2A861ECD004CCFEE /* ViewModels */,
-				F7A3EC3D29F0FB4D00ED36C7 /* Info.plist */,
 				F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */,
 				F790036E29E5236200CA6C83 /* UserDefaults.swift */,
 				F75B50DC29D6CB21007D2998 /* Assets.xcassets */,
+				F7A3EC3D29F0FB4D00ED36C7 /* Info.plist */,
 				F75B50DE29D6CB21007D2998 /* Preview Content */,
 			);
 			path = Setaraaaaa;
@@ -198,7 +198,7 @@
 				F740A6FD29E7327500265AAC /* TreatView.swift in Sources */,
 				646519042A8F5B8A0074BF1F /* ParticipantItem.swift in Sources */,
 				F790036D29E5184100CA6C83 /* SplashScreenView.swift in Sources */,
-				F7F1356029DC2BB30074F8F3 /* DetailPlateView.swift in Sources */,
+				F7F1356029DC2BB30074F8F3 /* DetailParticipantPlateView.swift in Sources */,
 				F787F17D29EE8C080076959F /* DepositView.swift in Sources */,
 				F7F1355E29DBBD8E0074F8F3 /* ParticipantListView.swift in Sources */,
 				646519022A8F5B7C0074BF1F /* Participant.swift in Sources */,

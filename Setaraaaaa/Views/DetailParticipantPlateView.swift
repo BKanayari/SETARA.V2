@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct DetailPlateView: View {
+struct DetailParticipantPlateView: View {
     @State var checkState = false
     @State var participant: Participant
-    @State var nameItems: [String] = []
+    @State var itemNames: [String] = []
     @State var priceItems: [String] = []
     @State var counter: Int = 0
     @State var discount: String = ""
@@ -260,8 +260,8 @@ struct DetailPlateView: View {
     }
 }
 
-struct DetailPlateView_Previews: PreviewProvider {
+struct DetailParticipantPlateView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPlateView( participant: Participant(name: "Hengky", isParticipated: false, food: [ParticipantItem(itemName: "", itemPrice: 0)], total: 0), listNameTable: .constant([]), index: 0 )
+        DetailParticipantPlateView( participant: Participant(name: "Hengky", isParticipated: false, food: [ParticipantItem(itemName: "", itemPrice: 0)], total: 0), listNameTable: .constant([]), index: 0 )
     }
 }
