@@ -7,43 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		646518FF2A8F55120074BF1F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 646518FE2A8F55120074BF1F /* .swiftlint.yml */; };
+		646519022A8F5B7C0074BF1F /* ListName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646519012A8F5B7C0074BF1F /* ListName.swift */; };
+		646519042A8F5B8A0074BF1F /* FoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646519032A8F5B8A0074BF1F /* FoodList.swift */; };
+		6486A6812A93601500F5A4E4 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6486A6802A93601500F5A4E4 /* CustomColor.swift */; };
 		F740A6FD29E7327500265AAC /* TreatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F740A6FC29E7327500265AAC /* TreatView.swift */; };
 		F75B50D929D6CB20007D2998 /* SetaraaaaaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */; };
 		F75B50DD29D6CB21007D2998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75B50DC29D6CB21007D2998 /* Assets.xcassets */; };
 		F75B50E029D6CB21007D2998 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F75B50DF29D6CB21007D2998 /* Preview Assets.xcassets */; };
-		F75B50E729D6CEA2007D2998 /* ViewDuaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50E629D6CEA2007D2998 /* ViewDuaView.swift */; };
-		F75B50E929DAB2A7007D2998 /* WelcomeScreenTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50E829DAB2A7007D2998 /* WelcomeScreenTwoView.swift */; };
-		F75B50EB29DAB375007D2998 /* WelcomeScreenThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50EA29DAB375007D2998 /* WelcomeScreenThreeView.swift */; };
-		F75B50ED29DAB3D5007D2998 /* SpendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50EC29DAB3D5007D2998 /* SpendingView.swift */; };
-		F75B50F129DB4583007D2998 /* TablePlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50F029DB4583007D2998 /* TablePlateView.swift */; };
+		F75B50E729D6CEA2007D2998 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50E629D6CEA2007D2998 /* OnBoardingView.swift */; };
+		F75B50ED29DAB3D5007D2998 /* SplitBillResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50EC29DAB3D5007D2998 /* SplitBillResultView.swift */; };
+		F75B50F129DB4583007D2998 /* ParticipantPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75B50F029DB4583007D2998 /* ParticipantPlateView.swift */; };
 		F787F17D29EE8C080076959F /* DepositView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F787F17C29EE8C080076959F /* DepositView.swift */; };
 		F790036D29E5184100CA6C83 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790036C29E5184100CA6C83 /* SplashScreenView.swift */; };
 		F790036F29E5236200CA6C83 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790036E29E5236200CA6C83 /* UserDefaults.swift */; };
-		F79FF12A29E2FE4500B727A1 /* ListName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79FF12929E2FE4500B727A1 /* ListName.swift */; };
-		F7F1355E29DBBD8E0074F8F3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355D29DBBD8E0074F8F3 /* HomeView.swift */; };
-		F7F1356029DC2BB30074F8F3 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355F29DC2BB30074F8F3 /* ItemView.swift */; };
+		F7F1355E29DBBD8E0074F8F3 /* ParticipantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355D29DBBD8E0074F8F3 /* ParticipantListView.swift */; };
+		F7F1356029DC2BB30074F8F3 /* DetailPlateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F1355F29DC2BB30074F8F3 /* DetailPlateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		646518FE2A8F55120074BF1F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		646519012A8F5B7C0074BF1F /* ListName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListName.swift; sourceTree = "<group>"; };
+		646519032A8F5B8A0074BF1F /* FoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodList.swift; sourceTree = "<group>"; };
+		6486A6802A93601500F5A4E4 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		F740A6FC29E7327500265AAC /* TreatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatView.swift; sourceTree = "<group>"; };
 		F75B50D529D6CB20007D2998 /* Setaraaaaa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setaraaaaa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetaraaaaaApp.swift; sourceTree = "<group>"; };
 		F75B50DC29D6CB21007D2998 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F75B50DF29D6CB21007D2998 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F75B50E629D6CEA2007D2998 /* ViewDuaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDuaView.swift; sourceTree = "<group>"; };
-		F75B50E829DAB2A7007D2998 /* WelcomeScreenTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenTwoView.swift; sourceTree = "<group>"; };
-		F75B50EA29DAB375007D2998 /* WelcomeScreenThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenThreeView.swift; sourceTree = "<group>"; };
-		F75B50EC29DAB3D5007D2998 /* SpendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingView.swift; sourceTree = "<group>"; };
-		F75B50F029DB4583007D2998 /* TablePlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePlateView.swift; sourceTree = "<group>"; };
+		F75B50E629D6CEA2007D2998 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		F75B50EC29DAB3D5007D2998 /* SplitBillResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitBillResultView.swift; sourceTree = "<group>"; };
+		F75B50F029DB4583007D2998 /* ParticipantPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantPlateView.swift; sourceTree = "<group>"; };
 		F787F17C29EE8C080076959F /* DepositView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositView.swift; sourceTree = "<group>"; };
 		F790036C29E5184100CA6C83 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		F790036E29E5236200CA6C83 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		F79FF12929E2FE4500B727A1 /* ListName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListName.swift; sourceTree = "<group>"; };
 		F7A3EC3D29F0FB4D00ED36C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		F7F1355D29DBBD8E0074F8F3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		F7F1355F29DC2BB30074F8F3 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		F7F1355D29DBBD8E0074F8F3 /* ParticipantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantListView.swift; sourceTree = "<group>"; };
+		F7F1355F29DC2BB30074F8F3 /* DetailPlateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +72,8 @@
 		64296C8C2A861ED1004CCFEE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				646519012A8F5B7C0074BF1F /* ListName.swift */,
+				646519032A8F5B8A0074BF1F /* FoodList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,26 +97,23 @@
 		F75B50D729D6CB20007D2998 /* Setaraaaaa */ = {
 			isa = PBXGroup;
 			children = (
+				6486A6802A93601500F5A4E4 /* CustomColor.swift */,
 				64296C8C2A861ED1004CCFEE /* Models */,
 				64296C8B2A861ED0004CCFEE /* Views */,
 				64296C8A2A861ECD004CCFEE /* ViewModels */,
 				F7A3EC3D29F0FB4D00ED36C7 /* Info.plist */,
 				F75B50D829D6CB20007D2998 /* SetaraaaaaApp.swift */,
 				F790036C29E5184100CA6C83 /* SplashScreenView.swift */,
-				F75B50E629D6CEA2007D2998 /* ViewDuaView.swift */,
-				F7F1355D29DBBD8E0074F8F3 /* HomeView.swift */,
-				F75B50F029DB4583007D2998 /* TablePlateView.swift */,
+				F75B50E629D6CEA2007D2998 /* OnBoardingView.swift */,
+				F7F1355D29DBBD8E0074F8F3 /* ParticipantListView.swift */,
+				F75B50F029DB4583007D2998 /* ParticipantPlateView.swift */,
+				F7F1355F29DC2BB30074F8F3 /* DetailPlateView.swift */,
 				F787F17C29EE8C080076959F /* DepositView.swift */,
 				F740A6FC29E7327500265AAC /* TreatView.swift */,
-				F79FF12929E2FE4500B727A1 /* ListName.swift */,
-				F7F1355F29DC2BB30074F8F3 /* ItemView.swift */,
-				F75B50E829DAB2A7007D2998 /* WelcomeScreenTwoView.swift */,
-				F75B50EA29DAB375007D2998 /* WelcomeScreenThreeView.swift */,
-				F75B50EC29DAB3D5007D2998 /* SpendingView.swift */,
+				F75B50EC29DAB3D5007D2998 /* SplitBillResultView.swift */,
+				F790036E29E5236200CA6C83 /* UserDefaults.swift */,
 				F75B50DC29D6CB21007D2998 /* Assets.xcassets */,
 				F75B50DE29D6CB21007D2998 /* Preview Content */,
-				F790036E29E5236200CA6C83 /* UserDefaults.swift */,
-				646518FE2A8F55120074BF1F /* .swiftlint.yml */,
 			);
 			path = Setaraaaaa;
 			sourceTree = "<group>";
@@ -139,7 +136,6 @@
 				F75B50D129D6CB20007D2998 /* Sources */,
 				F75B50D229D6CB20007D2998 /* Frameworks */,
 				F75B50D329D6CB20007D2998 /* Resources */,
-				646519002A8F55420074BF1F /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -188,7 +184,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				646518FF2A8F55120074BF1F /* .swiftlint.yml in Resources */,
 				F75B50E029D6CB21007D2998 /* Preview Assets.xcassets in Resources */,
 				F75B50DD29D6CB21007D2998 /* Assets.xcassets in Resources */,
 			);
@@ -196,44 +191,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		646519002A8F55420074BF1F /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		F75B50D129D6CB20007D2998 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F75B50F129DB4583007D2998 /* TablePlateView.swift in Sources */,
-				F75B50EB29DAB375007D2998 /* WelcomeScreenThreeView.swift in Sources */,
-				F75B50E729D6CEA2007D2998 /* ViewDuaView.swift in Sources */,
+				F75B50F129DB4583007D2998 /* ParticipantPlateView.swift in Sources */,
+				F75B50E729D6CEA2007D2998 /* OnBoardingView.swift in Sources */,
 				F740A6FD29E7327500265AAC /* TreatView.swift in Sources */,
+				6486A6812A93601500F5A4E4 /* CustomColor.swift in Sources */,
+				646519042A8F5B8A0074BF1F /* FoodList.swift in Sources */,
 				F790036D29E5184100CA6C83 /* SplashScreenView.swift in Sources */,
-				F7F1356029DC2BB30074F8F3 /* ItemView.swift in Sources */,
+				F7F1356029DC2BB30074F8F3 /* DetailPlateView.swift in Sources */,
 				F787F17D29EE8C080076959F /* DepositView.swift in Sources */,
-				F75B50E929DAB2A7007D2998 /* WelcomeScreenTwoView.swift in Sources */,
-				F7F1355E29DBBD8E0074F8F3 /* HomeView.swift in Sources */,
+				F7F1355E29DBBD8E0074F8F3 /* ParticipantListView.swift in Sources */,
+				646519022A8F5B7C0074BF1F /* ListName.swift in Sources */,
 				F790036F29E5236200CA6C83 /* UserDefaults.swift in Sources */,
-				F75B50ED29DAB3D5007D2998 /* SpendingView.swift in Sources */,
-				F79FF12A29E2FE4500B727A1 /* ListName.swift in Sources */,
+				F75B50ED29DAB3D5007D2998 /* SplitBillResultView.swift in Sources */,
 				F75B50D929D6CB20007D2998 /* SetaraaaaaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Setaraaaaa/Preview Content\"";
-				DEVELOPMENT_TEAM = LH73CAYKFH;
+				DEVELOPMENT_TEAM = B34FJD89YP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Setaraaaaa/Info.plist;
@@ -394,7 +368,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Setaraaaaa/Preview Content\"";
-				DEVELOPMENT_TEAM = LH73CAYKFH;
+				DEVELOPMENT_TEAM = B34FJD89YP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Setaraaaaa/Info.plist;

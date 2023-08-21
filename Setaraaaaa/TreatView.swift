@@ -9,14 +9,13 @@ import SwiftUI
 
 struct TreatView: View {
     @State var listNameTable: [ListName]
-    @State private var treatNumber : String = ""
+    @State private var treatNumber: String = ""
     @State private var selectedPerson = 0
     @Binding var isPresented: Bool
     @State private var showAlert = false
     @Environment(\.dismiss) var dismiss
     var index: Int
-    
-    
+
     var body: some View {
         VStack {
             TextField("Enter the number here", text: $treatNumber)
@@ -25,78 +24,60 @@ struct TreatView: View {
                 .lineLimit(2)
                 .padding(.leading, 10)
                 .keyboardType(.numberPad)
-            
-            Picker("Choose the person", selection: $selectedPerson,content: {
-                
+
+            Picker("Choose the person", selection: $selectedPerson, content: {
                 ForEach(0..<listNameTable.count, id: \.self) { index in
                     if listNameTable[index].isChecked {
                         Text("\(listNameTable[index].name)")
-                        
                     }
                 }
             })
             .pickerStyle(WheelPickerStyle())
-            
-            
+
             // logic calculate treat
-            
+
             var tmpTotal = 0
-            var treatPerson = SharedPreferences.shared.getParitcipant(name: listNameTable[selectedPerson].name) ?? ListName(name: "", isChecked: false, food: [FoodList(itemName: "", itemPrice: 0)], total: 0)
-            
-            var intTreatNumber = Int(treatNumber) ?? 0
-            
-            
+            var treatPerson = ParticipantData.shared.getParticipant(name: listNameTable[selectedPerson].name) ?? ListName(name: "", isChecked: false, food: [FoodList(itemName: "", itemPrice: 0)], total: 0)
+
+            let intTreatNumber = Int(treatNumber) ?? 0
+
             Button(action: {
-                
                 if treatPerson.total < intTreatNumber {
-                    
                     //                    treatPerson.total = intTreatNumber
-                    
+
                     print(treatPerson.total)
-                    
+
                     var sumTmpTotal = 0
-                    
+
                     for i in 0..<listNameTable.count {
-                        
-                        var participantss = SharedPreferences.shared.getParitcipant(name: listNameTable[i].name)
-                        
+                        let participantss = ParticipantData.shared.getParticipant(name: listNameTable[i].name)
+
                         sumTmpTotal += participantss?.total ?? 0
                     }
-                    
+
                     let calculateTreatment = (sumTmpTotal - intTreatNumber) / (listNameTable.count - 1)
-                    
-                    
-                    //                    let calculateNumberTreatment = intTreatNumber / listNameTable.count - 1
-                    
-                    var tmpTotal = 0
-                    
+
+//                    var tmpTotal = 0
+
                     for i in 0..<listNameTable.count {
-                        
                         if i != selectedPerson {
-                            
-                            var participantss = SharedPreferences.shared.getParitcipant(name: listNameTable[i].name)
-                            
+                            var participantss = ParticipantData.shared.getParticipant(name: listNameTable[i].name)
+
                             participantss?.total = calculateTreatment
-                            
-                            SharedPreferences.shared.addParcticipant(participantName: participantss!)
-                            
+
+                            ParticipantData.shared.addParcticipant(participantName: participantss!)
                         }
                     }
-                    
+
                     treatPerson.total = intTreatNumber
-                    SharedPreferences.shared.addParcticipant(participantName: treatPerson)
-                    
+                    ParticipantData.shared.addParcticipant(participantName: treatPerson)
+
                     dismiss()
-                    
                 } else {
                     showAlert.toggle()
                 }
-                
+
                 isPresented = false
-                
-                
-                
-                
             }) {
                 Text("Done")
                     .fontWeight(.bold)
@@ -110,7 +91,6 @@ struct TreatView: View {
             .alert(isPresented: $showAlert) {
                 Alert(title: Text("Your money is not enough"), message: Text("Put the right number"), dismissButton: .default(Text("OK")))
             }
-            
         }
     }
 }

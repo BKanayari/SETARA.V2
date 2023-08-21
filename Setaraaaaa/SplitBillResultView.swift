@@ -7,21 +7,17 @@
 
 import SwiftUI
 
-struct SpendingView: View {
-    
+struct SplitBillResultView: View {
     @State var listNameTable: [ListName]
-    @State var returnHome: Bool = false
-
+    @State var returnHome = false
     @State private var showingAlert = false
-    
+
     var body: some View {
         if returnHome {
-            HomeView()
-        }
-        else {
+            ParticipantListView()
+        } else {
             VStack {
-                VStack(alignment: .leading)
-                {
+                VStack(alignment: .leading) {
                     Text("Expenses")
                         .padding(.top, 20.0)
                         .padding(.leading, 15.0)
@@ -30,25 +26,21 @@ struct SpendingView: View {
                     List {
                         ForEach(0..<listNameTable.count) { i in
                             if listNameTable[i].isChecked {
-                                
-                                let participantss = SharedPreferences.shared.getParitcipant(name: listNameTable[i].name)
-                                
-                                HStack() {
+                                let participantss = ParticipantData.shared.getParticipant(name: listNameTable[i].name)
+                                HStack {
                                     Image(systemName: "person.circle.fill")
                                         .resizable()
                                         .frame(width: 30, height: 30)
                                         .foregroundColor(.black)
-                                        .padding(.trailing,10)
-                                    VStack() {
+                                        .padding(.trailing, 10)
+                                    VStack {
                                         Text("\(listNameTable[i].name)")
                                             .lineLimit(2)
                                             .frame(alignment: .leading)
                                     }
-
                                     Spacer()
-                                    
                                     Text("Rp \(participantss!.total)")
-                                        .frame(width : 100, height: 100, alignment: .leading)
+                                        .frame(width: 100, height: 100, alignment: .leading)
                                 }
                             }
                         }
@@ -58,8 +50,8 @@ struct SpendingView: View {
                     .background(Color.gray)
                     .cornerRadius(25)
                     .padding(.bottom, 80)
-                    
-                    Button{
+
+                    Button {
                         showingAlert = true
                     } label: {
                         Text("Finish")
@@ -78,9 +70,8 @@ struct SpendingView: View {
                             title: Text("Are you sure ?"),
                             message: Text("After this the transaction will be deleted"),
                             primaryButton: .destructive(Text("OK")) {
-                                
                                 for i in (0..<listNameTable.count ) {
-                                    SharedPreferences.shared.deleteAllTransaction(name: listNameTable[i].name, index: i)
+                                    ParticipantData.shared.deleteAllTransaction(name: listNameTable[i].name, index: i)
                                 }
                                 returnHome = true
                             },
@@ -89,13 +80,6 @@ struct SpendingView: View {
                     }
                 }
             }
-        }
-        
-    }
-    
-    struct SpendingView_Previews: PreviewProvider {
-        static var previews: some View {
-            SpendingView(listNameTable: [ListName(name: "Me", isChecked: true, food: [], total: 100)])
         }
     }
 }
